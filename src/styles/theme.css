@@ -1,0 +1,26 @@
+:root {
+  --primary: #2b6cee;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #22d3ee;
+  --background-dark: #07090f;
+  --card-dark: #12161f;
+  --border-dark: #1e2430;
+
+  --text-slate-100: #f1f5f9;
+  --text-slate-300: #cbd5e1;
+  --text-slate-400: #94a3b8;
+  --text-slate-500: #64748b;
+
+  --galaxy-gradient: radial-gradient(
+    ellipse 120% 80% at 50% -20%,
+    rgba(43, 108, 238, 0.18) 0%,
+    rgba(34, 211, 238, 0.08) 35%,
+    rgba(139, 92, 246, 0.06) 55%,
+    transparent 75%
+  );
+  --glass: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --hero-text-gradient: linear-gradient(to bottom, #ffffff, #64748b);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Noto Sans', sans-serif;
+}

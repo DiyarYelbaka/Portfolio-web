@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="200" y2="200">
+      <stop stop-color="#2b6cee"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="72" y1="52" x2="128" y2="148">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="200" height="200" rx="100" fill="#0c0f16"/>
+  <circle cx="100" cy="100" r="98" stroke="url(#ring)" stroke-width="2.5"/>
+
+  <!-- ambient blobs -->
+  <g filter="url(#blur)" opacity="0.85">
+    <circle cx="75" cy="78" r="36" fill="#2b6cee" fill-opacity="0.55"/>
+    <circle cx="128" cy="92" r="30" fill="#22d3ee" fill-opacity="0.45"/>
+    <circle cx="98" cy="128" r="32" fill="#8b5cf6" fill-opacity="0.35"/>
+  </g>
+
+  <!-- smartphone — net, minimal -->
+  <g>
+    <rect x="74" y="54" width="52" height="92" rx="14" stroke="url(#phone)" stroke-width="3" fill="rgba(15,18,25,0.75)"/>
+    <rect x="88" y="62" width="24" height="5" rx="2.5" fill="#1e2430"/>
+    <rect x="82" y="76" width="36" height="52" rx="6" fill="url(#phone)" fill-opacity="0.12"/>
+    <rect x="90" y="134" width="20" height="4" rx="2" fill="url(#phone)" fill-opacity="0.85"/>
+    <!-- app grid dots -->
+    <circle cx="92" cy="90" r="3" fill="#60a5fa" fill-opacity="0.9"/>
+    <circle cx="108" cy="90" r="3" fill="#22d3ee" fill-opacity="0.9"/>
+    <circle cx="92" cy="106" r="3" fill="#2b6cee" fill-opacity="0.8"/>
+    <circle cx="108" cy="106" r="3" fill="#8b5cf6" fill-opacity="0.75"/>
+  </g>
+</svg>

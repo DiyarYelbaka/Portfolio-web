@@ -1,0 +1,12 @@
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.starfield__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

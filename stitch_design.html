@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>React Native Developer Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "accent-purple": "#8b5cf6",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0B0E14",
+                        "card-dark": "#161b25",
+                        "border-dark": "#282e39",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'galaxy-gradient': 'radial-gradient(circle at 50% 0%, rgba(43, 108, 238, 0.15) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 80%)',
+                        'glass': 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0E14; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #282e39; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b4354; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-body antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Background Gradient Effect -->
+<div class="fixed inset-0 pointer-events-none bg-galaxy-gradient z-0"></div>
+<div class="layout-container flex h-full grow flex-col relative z-10">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-dark bg-background-dark/80 backdrop-blur-md px-6 py-4 lg:px-20">
+<div class="flex items-center gap-3 text-white">
+<div class="text-primary">
+<span class="material-symbols-outlined !text-[32px]">rocket_launch</span>
+</div>
+<h2 class="text-white text-xl font-display font-bold leading-tight tracking-tight">DevSpace</h2>
+</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-8">
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#about">About</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#skills">Skills</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#projects">Projects</a>
+</nav>
+<a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-wide shadow-[0_0_15px_rgba(43,108,238,0.3)]" href="#contact">
+<span class="truncate">Hire Me</span>
+</a>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex flex-col items-center justify-center w-full">
+<!-- Hero Section -->
+<section class="w-full px-4 py-20 lg:py-32 flex flex-col items-center text-center relative overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-border-dark/50 border border-border-dark mb-6">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-xs font-medium text-slate-300 uppercase tracking-wider">Available for work</span>
+</div>
+<h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl tracking-tighter text-white mb-6 max-w-4xl bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
+                        React Native Developer
+                    </h1>
+<p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-10 font-light leading-relaxed">
+                        Crafting high-performance mobile experiences for the modern web and native ecosystems using cutting-edge technologies.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center">
+<a class="flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-blue-600 transition-all text-white text-base font-bold shadow-[0_0_20px_rgba(43,108,238,0.4)] hover:shadow-[0_0_30px_rgba(43,108,238,0.6)]" href="#projects">
+                            View Projects
+                        </a>
+<a class="flex items-center justify-center rounded-full h-12 px-8 bg-transparent border border-border-dark hover:border-slate-500 hover:bg-white/5 transition-all text-white text-base font-bold" href="#contact">
+                            Contact Me
+                        </a>
+</div>
+</section>
+<!-- Tech Stack Section (About) -->
+<section class="w-full max-w-7xl px-6 py-20 flex flex-col gap-10" id="about">
+<div class="flex flex-col gap-2 border-l-4 border-primary pl-6">
+<h2 class="text-white font-display text-3xl md:text-4xl font-bold tracking-tight">Tech Stack</h2>
+<p class="text-slate-400 text-lg max-w-2xl">Leveraging robust architectures to build seamless cross-platform applications.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="group flex flex-col items-center text-center p-6 rounded-2xl border border-border-dark bg-card-dark hover:border-primary/50 hover:bg-card-dark/80 transition-all duration-300">
+<div class="text-primary mb-4 p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined !text-4xl">smartphone</span>
+</div>
+<h3 class="text-white text-lg font-bold font-display">React Native</h3>
+<p class="text-slate-500 text-sm mt-1">Core Framework</p>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col items-center text-center p-6 rounded-2xl border border-border-dark bg-card-dark hover:border-primary/50 hover:bg-card-dark/80 transition-all duration-300">
+<div class="text-white mb-4 p-3 rounded-xl bg-white/5 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined !text-4xl">rocket</span>
+</div>
+<h3 class="text-white text-lg font-bold font-display">Expo</h3>
+<p class="text-slate-500 text-sm mt-1">Rapid Development</p>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col items-center text-center p-6 rounded-2xl border border-border-dark bg-card-dark hover:border-primary/50 hover:bg-card-dark/80 transition-all duration-300">
+<div class="text-blue-400 mb-4 p-3 rounded-xl bg-blue-400/10 group-hover:bg-blue-400/20 transition-colors">
+<span class="material-symbols-outlined !text-4xl">code</span>
+</div>
+<h3 class="text-white text-lg font-bold font-display">TypeScript</h3>
+<p class="text-slate-500 text-sm mt-1">Type Safety</p>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col items-center text-center p-6 rounded-2xl border border-border-dark bg-card-dark hover:border-primary/50 hover:bg-card-dark/80 transition-all duration-300">
+<div class="text-accent-purple mb-4 p-3 rounded-xl bg-accent-purple/10 group-hover:bg-accent-purple/20 transition-colors">
+<span class="material-symbols-outlined !text-4xl">dataset</span>
+</div>
+<h3 class="text-white text-lg font-bold font-display">Redux</h3>
+<p class="text-slate-500 text-sm mt-1">State Management</p>
+</div>
+</div>
+</section>
+<!-- Skills Detail Section -->
+<section class="w-full max-w-7xl px-6 py-10" id="skills">
+<div class="bg-glass border border-border-dark rounded-3xl p-8 md:p-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
+<!-- Skill Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-slate-400">api</span>
+<div>
+<h4 class="text-white font-bold font-display mb-1">REST &amp; GraphQL</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Efficient data fetching and API integration strategies.</p>
+</div>
+</div>
+<!-- Skill Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-slate-400">animation</span>
+<div>
+<h4 class="text-white font-bold font-display mb-1">Reanimated</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Smooth 60fps animations and gesture handling.</p>
+</div>
+</div>
+<!-- Skill Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-slate-400">terminal</span>
+<div>
+<h4 class="text-white font-bold font-display mb-1">CI/CD Pipelines</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Automated testing and deployment with Fastlane.</p>
+</div>
+</div>
+<!-- Skill Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-slate-400">palette</span>
+<div>
+<h4 class="text-white font-bold font-display mb-1">UI/UX Design</h4>
+<p class="text-slate-500 text-sm leading-relaxed">Translating Figma designs into pixel-perfect code.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects Section -->
+<section class="w-full max-w-7xl px-6 py-20 flex flex-col gap-10" id="projects">
+<div class="flex flex-col gap-2 border-l-4 border-accent-purple pl-6">
+<h2 class="text-white font-display text-3xl md:text-4xl font-bold tracking-tight">Featured Projects</h2>
+<p class="text-slate-400 text-lg">Selected works demonstrating mobile expertise.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project Card 1 -->
+<div class="group relative rounded-2xl bg-card-dark border border-border-dark overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(43,108,238,0.15)]">
+<div class="h-64 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Abstract 3D purple shapes representing a crypto dashboard" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGI77Ma6YyoVzfXFWHBPJP_IRaD3Ck07tN96sMu61mZWWWzVgpSu66_sYUF2BpEFjaeku7O3ZC60eCW3U9LJCr70khh95xOAgrkjCx7BE5fNnzQ_rXftUTaXRzowM4pk2XrSqdhD3Tq9yRJso7g9fcoKix0ZLnlFhaEUGcNi0Y6MILR-KqipNec_rRf-BPn__-9JrXDv0g0rre5I1Dazu6XO9SIzWz_REw9MUfErNCT-0Vl9YvnA7Dh43fQs19r0apzxqsHiMW8AJs');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 rounded-full border border-primary/20">Fintech</span>
+<span class="text-slate-400 text-xs">2023</span>
+</div>
+<h3 class="text-2xl font-bold text-white font-display mb-2 group-hover:text-primary transition-colors">Nova Wallet</h3>
+<p class="text-slate-300 mb-6 line-clamp-2">A secure, non-custodial crypto wallet with real-time market data integration and biometric authentication.</p>
+<div class="flex items-center justify-between border-t border-white/10 pt-4">
+<div class="flex gap-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]" title="React Native">smartphone</span>
+<span class="material-symbols-outlined text-[20px]" title="TypeScript">code</span>
+</div>
+<a class="flex items-center gap-1 text-sm font-bold text-white hover:text-primary transition-colors" href="#">
+                                        Case Study <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group relative rounded-2xl bg-card-dark border border-border-dark overflow-hidden hover:border-accent-purple/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]">
+<div class="h-64 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Data visualization dashboard on dark background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDBc-D6QCWfj2lAtubyMaL_07dgl7zEgk5c7ur1uhgKTJeLGqcig4HffDGnlOiNqMxByameyNAYebKg6QbLaCsuBgKM7o-mT2jT1Dww_s2WuyAO27yg_KZQcygO3OdatDUJjRTUIu3Ri7YclqSmiHocnnQ8mCusVtZ9TeuK3okxyNKgrrAbcp-W_lNOzyB5PSyIDRYuqtXU9sZboUCztyXX62_M368GmJXV4sHiMDXyXQS7_v3l3ti_PVCGE56AGdL1c1jjJjILw15');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-purple bg-accent-purple/10 rounded-full border border-accent-purple/20">Healthcare</span>
+<span class="text-slate-400 text-xs">2024</span>
+</div>
+<h3 class="text-2xl font-bold text-white font-display mb-2 group-hover:text-accent-purple transition-colors">Vitals Monitor</h3>
+<p class="text-slate-300 mb-6 line-clamp-2">Patient monitoring dashboard connecting to wearable Bluetooth LE devices for real-time health tracking.</p>
+<div class="flex items-center justify-between border-t border-white/10 pt-4">
+<div class="flex gap-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]" title="Bluetooth">bluetooth</span>
+<span class="material-symbols-outlined text-[20px]" title="Redux">dataset</span>
+</div>
+<a class="flex items-center gap-1 text-sm font-bold text-white hover:text-accent-purple transition-colors" href="#">
+                                        Case Study <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group relative rounded-2xl bg-card-dark border border-border-dark overflow-hidden hover:border-blue-400/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(96,165,250,0.15)]">
+<div class="h-64 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Modern fitness app interface with dark mode" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYMNlf6PIJf3tU1nmhpsbimaL6_7UlSLSw436Nw8jQeQa4tcmkLR33LRFPZVXvPRYuihg7zFaPwjaDJ-ifNq47zqvBeLRMFhH37ihfqkSc4sDz3rFO2Fb7SKAf8NGzOX7ObblkjEiPAySuiFrvfQhCvdLnjnm9t7iC5wQfBQpJmJKJJZ0u3VPU9k5LmSn3LOYa56DV1icw1plr2ygnp3ReMSzb8M7ixlYoKMBan6emoqWhz71BN8krIZDcdPiq7FBPvaHntbSsQTQR');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-400 bg-blue-400/10 rounded-full border border-blue-400/20">Lifestyle</span>
+<span class="text-slate-400 text-xs">2022</span>
+</div>
+<h3 class="text-2xl font-bold text-white font-display mb-2 group-hover:text-blue-400 transition-colors">AeroFit</h3>
+<p class="text-slate-300 mb-6 line-clamp-2">Social fitness tracking application featuring gamification, leaderboards, and interactive maps.</p>
+<div class="flex items-center justify-between border-t border-white/10 pt-4">
+<div class="flex gap-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]" title="Maps">map</span>
+<span class="material-symbols-outlined text-[20px]" title="Firebase">local_fire_department</span>
+</div>
+<a class="flex items-center gap-1 text-sm font-bold text-white hover:text-blue-400 transition-colors" href="#">
+                                        Case Study <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group relative rounded-2xl bg-card-dark border border-border-dark overflow-hidden hover:border-white/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+<div class="h-64 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Smart home control panel interface" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbf9dInqi3UB005LxpJ43NQ0DPj9pmcMXCABFLDxHTRBnBFccUTfAT9b-64qqfqwpmlmTgOc-HHlgNb_agb2AmrOnhRUvNh7wy50GGheV6AVga2QPxdo9QRmMBynL3d5NJhQVppu3AmKqcK-G6Z-NWhJ4YTcfy-c-vjF-CPzMP_kzwjzhFEBXrzzduOg5I_Q2A2Z5sF6XaHiKgLan4EML1bG5M4zFQ-RceOEFj7x4OBff0N43Io634D6HUL3GrHufBGs0g7Ptd-wsw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-white bg-white/10 rounded-full border border-white/20">IoT</span>
+<span class="text-slate-400 text-xs">2023</span>
+</div>
+<h3 class="text-2xl font-bold text-white font-display mb-2 group-hover:text-slate-300 transition-colors">Nexus Home</h3>
+<p class="text-slate-300 mb-6 line-clamp-2">Unified smart home controller for adjusting lighting, temperature, and security systems remotely.</p>
+<div class="flex items-center justify-between border-t border-white/10 pt-4">
+<div class="flex gap-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]" title="MQTT">hub</span>
+<span class="material-symbols-outlined text-[20px]" title="React Native">smartphone</span>
+</div>
+<a class="flex items-center gap-1 text-sm font-bold text-white hover:text-slate-300 transition-colors" href="#">
+                                        Case Study <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="w-full max-w-3xl px-6 py-20 lg:py-32" id="contact">
+<div class="bg-card-dark border border-border-dark rounded-3xl p-8 md:p-12 shadow-2xl">
+<div class="text-center mb-10">
+<h2 class="text-white font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">Let's build something stellar</h2>
+<p class="text-slate-400 text-lg">Have a project in mind? Let's connect and discuss how I can help bring your mobile app vision to life.</p>
+</div>
+<form class="flex flex-col gap-6">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="flex-1 flex flex-col gap-2">
+<label class="text-slate-300 text-sm font-medium" for="name">Name</label>
+<input class="bg-background-dark border border-border-dark rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="name" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<label class="text-slate-300 text-sm font-medium" for="email">Email</label>
+<input class="bg-background-dark border border-border-dark rounded-lg h-12 px-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="email" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-300 text-sm font-medium" for="message">Message</label>
+<textarea class="bg-background-dark border border-border-dark rounded-lg p-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" id="message" placeholder="Tell me about your project..." rows="4"></textarea>
+</div>
+<button class="mt-2 w-full flex items-center justify-center rounded-lg h-12 bg-primary hover:bg-blue-600 transition-colors text-white text-base font-bold shadow-[0_0_20px_rgba(43,108,238,0.3)]" type="button">
+                                Send Message
+                            </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-border-dark bg-background-dark px-6 py-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="text-sm">© 2026 DevSpace. All rights reserved.</span>
+</div>
+<div class="flex items-center gap-6">
+<a aria-label="GitHub" class="text-slate-400 hover:text-white transition-colors" href="#">
+<!-- Simple GitHub Icon substitute using Material Symbols or similar minimalist rep -->
+<span class="font-bold font-display text-sm tracking-widest uppercase">Github</span>
+</a>
+<a aria-label="LinkedIn" class="text-slate-400 hover:text-white transition-colors" href="#">
+<span class="font-bold font-display text-sm tracking-widest uppercase">LinkedIn</span>
+</a>
+<a aria-label="Twitter" class="text-slate-400 hover:text-white transition-colors" href="#">
+<span class="font-bold font-display text-sm tracking-widest uppercase">X / Twitter</span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
