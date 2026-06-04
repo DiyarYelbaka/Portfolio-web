@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Diyar Yelbaka">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="55%" stop-color="#2b6cee"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#07090f"/>
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="url(#g)" stroke-width="1.2" opacity="0.55"/>
+  <g filter="url(#glow)">
+    <path
+      fill="url(#g)"
+      d="M10 8h6.2c4.2 0 7 2.6 7 6.2 0 2.4-1.2 4.2-3.2 5.1L22 24h-3.4l-4.6-7.8H13.2V24H10V8zm3.2 3v5.4h2.6c2.1 0 3.4-1.1 3.4-2.7S18 11 16 11h-2.8z"
+    />
+  </g>
+</svg>

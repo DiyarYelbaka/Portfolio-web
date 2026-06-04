@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Reveal from '../Reveal/Reveal'
+import { assetUrl } from '../../utils/assetUrl'
 import './Projects.css'
 
 const AUTOPLAY_MS = 5500
@@ -19,7 +20,7 @@ const toRealIndex = (trackIndex, len) => {
 
 /** public/projects/{id}/1.{ext} — sol | 2 — orta | 3 — sağ */
 const projectScreens = (id, ext = 'webp') =>
-  [1, 2, 3].map((n) => `/projects/${id}/${n}.${ext}`)
+  [1, 2, 3].map((n) => assetUrl(`projects/${id}/${n}.${ext}`))
 
 const projects = [
   {

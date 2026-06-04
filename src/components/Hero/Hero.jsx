@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import Reveal from '../Reveal/Reveal'
 import Marquee from '../Marquee/Marquee'
+import { assetUrl } from '../../utils/assetUrl'
 import './Hero.css'
 
 // Fotoğraf: public/profile.jpg ekle · Metinleri buradan güncelle
 const PROFILE = {
   name: 'Diyar Yelbaka',
-  image: '/profile.jpg',
-  imageFallback: '/profile-placeholder.svg',
+  image: assetUrl('profile.jpg'),
+  imageFallback: assetUrl('profile-placeholder.svg'),
   bio: 'İzmir merkezli React Native geliştiricisi. Enterprise mobil uygulamalar, ölçeklenebilir mimari ve production odaklı teslimat üzerine çalışıyorum.',
 }
 

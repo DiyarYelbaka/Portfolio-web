@@ -5,5 +5,6 @@ import react from '@vitejs/plugin-react'
 // GitHub Pages proje URL: /Portfolio-web/  |  Özel domain: VITE_BASE=/ yarn build
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE || '/Portfolio-web/',
+  // Dev: /  |  GitHub Pages: workflow VITE_BASE=/Portfolio-web/  |  Domain: VITE_BASE=/
+  base: process.env.VITE_BASE || '/',
 })

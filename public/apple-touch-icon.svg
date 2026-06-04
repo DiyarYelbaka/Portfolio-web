@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Diyar Yelbaka">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="55%" stop-color="#2b6cee"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="#07090f"/>
+  <rect x="4" y="4" width="172" height="172" rx="36" fill="none" stroke="url(#g)" stroke-width="3" opacity="0.5"/>
+  <path
+    fill="url(#g)"
+    d="M52 48h52c35 0 58 22 58 52 0 20-10 36-27 43L148 132H88L62 88H72V132H52V48zm28 18v46h22c18 0 30-9 30-23s-12-23-30-23H80z"
+  />
+</svg>
