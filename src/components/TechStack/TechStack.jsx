@@ -9,10 +9,10 @@ const mainSkills = [
 ]
 
 const detailSkills = [
-    { name: 'Clean Architecture', desc: 'Building sustainable, scalable, and maintainable enterprise codebases.', icon: 'architecture' },
-    { name: 'Performance Ops', desc: 'Expert in render optimization, lifecycle management, and memory efficiency.', icon: 'bolt' },
-    { name: 'AI Integration', desc: 'Experience with image processing, AI listings, and voice-driven finance apps.', icon: 'psychology' },
-    { name: 'Deployment & CI/CD', desc: 'Full lifecycle management from development to App Store & Play Store.', icon: 'rocket_launch' },
+    { name: 'Clean Architecture', desc: 'Sürdürülebilir, ölçeklenebilir ve bakımı kolay kurumsal kod tabanları kuruyorum.', icon: 'architecture' },
+    { name: 'Performance Ops', desc: 'Render optimizasyonu, lifecycle yönetimi ve bellek verimliliği konularında uzmanım.', icon: 'bolt' },
+    { name: 'Native Integrations', desc: 'Ödeme SDK\'ları, kamera, push bildirim ve platform API\'lerini React Native ile sorunsuz bağlıyorum.', icon: 'extension' },
+    { name: 'Deployment & CI/CD', desc: 'Geliştirmeden App Store ve Play Store\'a kadar tüm süreci uçtan uca yönetiyorum.', icon: 'rocket_launch' },
 ]
 
 const TechStack = () => {
@@ -20,7 +20,7 @@ const TechStack = () => {
         <section className="tech-stack-ref container" id="skills">
             <Reveal className="section-header-ref">
                 <h2 className="section-title-ref">Teknoloji & Yetkinlik</h2>
-                <p className="section-subtitle-ref">Kurumsal mobil ürünler için kanıtlanmış stack — hız, tip güvenliği ve sürdürülebilir mimari.</p>
+                <p className="section-subtitle-ref">Performans, ölçeklenebilirlik ve kullanıcı deneyimi odaklı geliştirme.</p>
             </Reveal>
 
             <div className="main-skills-grid">

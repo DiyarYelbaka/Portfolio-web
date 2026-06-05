@@ -9,7 +9,7 @@ const PROFILE = {
   name: 'Diyar Yelbaka',
   image: assetUrl('profile.jpg'),
   imageFallback: assetUrl('profile-placeholder.svg'),
-  bio: 'İzmir merkezli React Native geliştiricisi. Enterprise mobil uygulamalar, ölçeklenebilir mimari ve production odaklı teslimat üzerine çalışıyorum.',
+  bio: 'Mobil uygulamaları sadece geliştirmiyor, fikirden canlı ortama kadar tüm süreci yönetiyorum. Kullanıcı deneyimi, performans ve sürdürülebilir mimariyi bir araya getirerek yüksek kaliteli dijital ürünler oluşturuyorum.',
 }
 
 const Hero = () => {
