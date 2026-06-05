@@ -1,18 +1,18 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Reveal from '../Reveal/Reveal'
 import Marquee from '../Marquee/Marquee'
 import { assetUrl } from '../../utils/assetUrl'
 import './Hero.css'
 
-// Fotoğraf: public/profile.jpg ekle · Metinleri buradan güncelle
 const PROFILE = {
   name: 'Diyar Yelbaka',
   image: assetUrl('profile.jpg'),
   imageFallback: assetUrl('profile-placeholder.svg'),
-  bio: 'Mobil uygulamaları sadece geliştirmiyor, fikirden canlı ortama kadar tüm süreci yönetiyorum. Kullanıcı deneyimi, performans ve sürdürülebilir mimariyi bir araya getirerek yüksek kaliteli dijital ürünler oluşturuyorum.',
 }
 
 const Hero = () => {
+  const { t } = useTranslation()
   const [imgSrc, setImgSrc] = useState(PROFILE.image)
 
   const handleImageError = () => {
@@ -50,17 +50,17 @@ const Hero = () => {
       </Reveal>
 
       <Reveal delay={200}>
-        <p className="hero-bio">{PROFILE.bio}</p>
+        <p className="hero-bio">{t('hero.bio')}</p>
       </Reveal>
 
       <Reveal delay={260}>
         <div className="hero-actions-ref">
           <a href="#projects" className="btn-primary-ref">
-            Projeler
+            {t('hero.projects')}
             <span className="material-symbols-outlined">arrow_forward</span>
           </a>
           <a href="#contact" className="btn-secondary-ref">
-            İletişim
+            {t('hero.contact')}
           </a>
         </div>
       </Reveal>

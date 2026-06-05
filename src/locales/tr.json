@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "Hakkımda",
+    "skills": "Yetenekler",
+    "approach": "Yaklaşımım",
+    "projects": "Projeler",
+    "contact": "Konuşalım",
+    "menu": "Menü"
+  },
+  "hero": {
+    "bio": "Mobil uygulamaları sadece geliştirmiyor, fikirden canlı ortama kadar tüm süreci yönetiyorum. Kullanıcı deneyimi, performans ve sürdürülebilir mimariyi bir araya getirerek yüksek kaliteli dijital ürünler oluşturuyorum.",
+    "projects": "Projeler",
+    "contact": "İletişim"
+  },
+  "stats": {
+    "ariaLabel": "Özet metrikler",
+    "years": { "label": "Yıl", "sub": "Enterprise mobil geliştirme" },
+    "products": { "label": "Ürün", "sub": "Canlıya alınmış uygulama" },
+    "scale": { "label": "Ölçek", "sub": "Modüler, sürdürülebilir mimari" },
+    "focus": { "label": "Odak", "sub": "TypeScript & sürdürülebilir kod" }
+  },
+  "tech": {
+    "title": "Teknoloji & Yetkinlik",
+    "subtitle": "Performans, ölçeklenebilirlik ve kullanıcı deneyimi odaklı geliştirme.",
+    "main": {
+      "reactNative": { "desc": "CLI & Expo uzmanı" },
+      "typescript": { "desc": "Tip güvenliği odaklı" },
+      "state": { "desc": "Zustand, Redux, Recoil" },
+      "api": { "desc": "REST & GraphQL" }
+    },
+    "detail": {
+      "cleanArch": { "desc": "Sürdürülebilir, ölçeklenebilir ve bakımı kolay kurumsal kod tabanları kuruyorum." },
+      "performance": { "desc": "Render optimizasyonu, lifecycle yönetimi ve bellek verimliliği konularında uzmanım." },
+      "native": { "desc": "Ödeme SDK'ları, kamera, push bildirim ve platform API'lerini React Native ile sorunsuz bağlıyorum." },
+      "deploy": { "desc": "Geliştirmeden App Store ve Play Store'a kadar tüm süreci uçtan uca yönetiyorum." }
+    }
+  },
+  "whyHire": {
+    "eyebrow": "Çalışma yaklaşımım",
+    "title": "Ne sunuyorum",
+    "subtitle": "Ürün odaklı geliştirme — mimariden mağaza yayınına kadar tutarlı ve sürdürülebilir bir süreç.",
+    "pillars": {
+      "ideaToStore": {
+        "title": "Fikirden mağazaya",
+        "desc": "Mimari karar, geliştirme, test ve App Store / Play Store sürecine kadar tek elden sahiplenme."
+      },
+      "codeQuality": {
+        "title": "Kod kalitesi önce",
+        "desc": "Clean Architecture, TypeScript ve ölçeklenebilir state — teknik borç biriktirmeden büyüyen codebase."
+      },
+      "performance": {
+        "title": "Performans odaklı",
+        "desc": "Render optimizasyonu, bellek yönetimi ve akıcı etkileşim — kullanıcı deneyimini önceleyen uygulamalar."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "title": "Seçilmiş",
+    "titleAccent": "projeler",
+    "subtitle": "Her ürün için üç ekran görüntüsü — mobil mockup içinde önizlenir.",
+    "featured": "Öne çıkan",
+    "prev": "Önceki proje",
+    "next": "Sonraki proje",
+    "carousel": "Seçilmiş projeler",
+    "selectProject": "Proje seç",
+    "slide": "{{title}} — slayt {{index}}",
+    "screen": "{{title}} ekran {{slot}}",
+    "appStore": "App Store'da indir",
+    "googlePlay": "Google Play'de indir",
+    "website": "web sitesini ziyaret et",
+    "stores": {
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "web": "Web"
+    },
+    "items": {
+      "plan4m": {
+        "highlight": "Stüdyo, eğitmen ve üyeleri tek ekosistemde buluşturan hepsi-bir-arada yönetim platformu.",
+        "desc": "Üyelik takibi, seans planlama, ödeme ve raporlama — stüdyo sahibinden kişisel eğitmene, üyeye kadar herkes için ayrı akışlar. Akıllı yenileme hatırlatmaları ve gelir raporları tek uygulamada.",
+        "tag": "Sağlık & Fitness",
+        "metrics": ["300+ stüdyo", "Seans & Üyelik", "Ödeme takibi"]
+      },
+      "easyfinai": {
+        "highlight": "Sesli komutla harcama kaydı — yapay zeka destekli gelir-gider ve bütçe yönetimi.",
+        "desc": "\"600 TL market\" de, otomatik kaydetsin. Akıllı kategori yönetimi, grafik raporlar ve gerçek zamanlı pano. Banka bağlantısı olmadan, güvenli ve şifreli finans takibi.",
+        "tag": "Finans / AI",
+        "metrics": ["Sesli komut", "AI kategori", "Raporlama"]
+      },
+      "futbo": {
+        "highlight": "Futbol kulübünün tüm operasyonu — antrenmandan scouting'e, finanstan sağlığa.",
+        "desc": "Antrenman ve müsabaka planlama, oyuncu keşfi, atletik performans analizi, finans ve sağlık yönetimi. AI destekli analiz modülü ve futbolcu CV sistemi ile departmanlara özel çözümler.",
+        "tag": "Spor",
+        "metrics": ["Scouting", "AI analiz", "Kulüp finansı"]
+      },
+      "vgen": {
+        "highlight": "Enerji ticaretinden santral yönetimine — anlık piyasa ve tesis operasyonları tek panelde.",
+        "desc": "Gün İçi Piyasası işlemleri, santral ve tüketim tesisi planlama, saatlik üretim-tüketim grafikleri ve KGÜP revizyonları. Pozisyon takibi ve piyasa raporlarıyla stratejik kararlar mobilde.",
+        "tag": "Enerji / İş",
+        "metrics": ["Gün içi piyasa", "Santral yönetimi", "Canlı raporlar"]
+      },
+      "cartech": {
+        "highlight": "Yapay zeka ile araç fotoğraflarına profesyonel arka plan — saniyeler içinde.",
+        "desc": "Aracı arka plandan otomatik ayırır; showroom, doğa veya şehir manzarası gibi ortamlarla gerçekçi görseller üretir. Satış ilanlarını ve sosyal medya paylaşımlarını daha çekici hale getirir.",
+        "tag": "Otomotiv / AI",
+        "metrics": ["AI segmentasyon", "Showroom", "İlan görselleri"]
+      }
+    }
+  },
+  "footer": {
+    "eyebrow": "İletişim",
+    "title": "Birlikte",
+    "titleAccent": "konuşalım",
+    "subtitle": "İzmir merkezli, remote-friendly. Mobil geliştirme veya mimari danışmanlık için mesaj bırakın.",
+    "quickAccess": "Hızlı erişim",
+    "location": "İzmir · Remote-friendly",
+    "response": "Genelde 24 saat içinde dönüş",
+    "form": {
+      "name": "Ad",
+      "namePlaceholder": "Adınız",
+      "email": "E-posta",
+      "emailPlaceholder": "ornek@mail.com",
+      "message": "Mesaj",
+      "messagePlaceholder": "Projenizden kısaca bahsedin...",
+      "submit": "Mesaj gönder"
+    },
+    "email": "E-posta",
+    "linkedin": "LinkedIn profili",
+    "github": "GitHub profili",
+    "copyright": "© 2026 · React Native Developer"
+  }
+}

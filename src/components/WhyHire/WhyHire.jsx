@@ -1,46 +1,35 @@
+import { useTranslation } from 'react-i18next'
 import Reveal from '../Reveal/Reveal'
 import './WhyHire.css'
 
-const pillars = [
-  {
-    icon: 'rocket_launch',
-    title: 'Fikirden mağazaya',
-    desc: 'Mimari karar, geliştirme, test ve App Store / Play Store sürecine kadar tek elden sahiplenme.',
-  },
-  {
-    icon: 'architecture',
-    title: 'Kod kalitesi önce',
-    desc: 'Clean Architecture, TypeScript ve ölçeklenebilir state — teknik borç biriktirmeden büyüyen codebase.',
-  },
-  {
-    icon: 'bolt',
-    title: 'Performans odaklı',
-    desc: 'Render optimizasyonu, bellek yönetimi ve akıcı etkileşim — kullanıcı deneyimini önceleyen uygulamalar.',
-  },
+const PILLAR_KEYS = [
+  { key: 'ideaToStore', icon: 'rocket_launch' },
+  { key: 'codeQuality', icon: 'architecture' },
+  { key: 'performance', icon: 'bolt' },
 ]
 
 const WhyHire = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="why-hire container" id="approach">
       <div className="why-hire__space" aria-hidden="true" />
       <Reveal className="why-hire__header">
-        <span className="section-eyebrow">Çalışma yaklaşımım</span>
+        <span className="section-eyebrow">{t('whyHire.eyebrow')}</span>
         <h2 className="why-hire__title">
-          <span className="text-accent">Ne sunuyorum</span>
+          <span className="text-accent">{t('whyHire.title')}</span>
         </h2>
-        <p className="why-hire__subtitle">
-          Ürün odaklı geliştirme — mimariden mağaza yayınına kadar tutarlı ve sürdürülebilir bir süreç.
-        </p>
+        <p className="why-hire__subtitle">{t('whyHire.subtitle')}</p>
       </Reveal>
 
       <div className="why-hire__grid">
-        {pillars.map((item, i) => (
-          <Reveal key={item.title} className="why-hire__card" delay={i * 100}>
+        {PILLAR_KEYS.map((item, i) => (
+          <Reveal key={item.key} className="why-hire__card" delay={i * 100}>
             <div className="why-hire__icon-wrap">
               <span className="material-symbols-outlined">{item.icon}</span>
             </div>
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
+            <h3>{t(`whyHire.pillars.${item.key}.title`)}</h3>
+            <p>{t(`whyHire.pillars.${item.key}.desc`)}</p>
           </Reveal>
         ))}
       </div>

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import Reveal from '../Reveal/Reveal'
-import { assetUrl } from '../../utils/assetUrl'
+import { getProjectsWithScreens } from '../../data/projectsMeta'
 import './Projects.css'
 
 const AUTOPLAY_MS = 5500
@@ -18,100 +19,9 @@ const toRealIndex = (trackIndex, len) => {
   return trackIndex - 1
 }
 
-/** public/projects/{id}/1.{ext} — sol | 2 — orta | 3 — sağ */
-const projectScreens = (id, ext = 'webp') =>
-  [1, 2, 3].map((n) => assetUrl(`projects/${id}/${n}.${ext}`))
-
-const projects = [
-  {
-    id: 'plan4m',
-    title: 'Plan4M',
-    highlight: 'Stüdyo, eğitmen ve üyeleri tek ekosistemde buluşturan hepsi-bir-arada yönetim platformu.',
-    desc: 'Üyelik takibi, seans planlama, ödeme ve raporlama — stüdyo sahibinden kişisel eğitmene, üyeye kadar herkes için ayrı akışlar. Akıllı yenileme hatırlatmaları ve gelir raporları tek uygulamada.',
-    tag: 'Sağlık & Fitness',
-    year: '2024',
-    screens: projectScreens('plan4m'),
-    accent: 'cyan',
-    stack: ['React Native', 'TypeScript', 'Redux'],
-    metrics: ['300+ stüdyo', 'Seans & Üyelik', 'Ödeme takibi'],
-    featured: true,
-    stores: {
-      appStore: 'https://apps.apple.com/tr/app/plan4m-salon-pt-yönetimi/id6471654614?l=tr',
-      playStore: 'https://play.google.com/store/apps/details?id=com.inch35.plan4m&hl=tr',
-    },
-    website: 'https://plan4m.com',
-  },
-  {
-    id: 'easyfinai',
-    title: 'EasyFinAI',
-    highlight: 'Sesli komutla harcama kaydı — yapay zeka destekli gelir-gider ve bütçe yönetimi.',
-    desc: '"600 TL market" de, otomatik kaydetsin. Akıllı kategori yönetimi, grafik raporlar ve gerçek zamanlı pano. Banka bağlantısı olmadan, güvenli ve şifreli finans takibi.',
-    tag: 'Finans / AI',
-    year: '2025',
-    screens: projectScreens('easyfinai'),
-    accent: 'purple',
-    stack: ['Expo', 'OpenAI', 'Zustand'],
-    metrics: ['Sesli komut', 'AI kategori', 'Raporlama'],
-    stores: {
-      appStore: 'https://apps.apple.com/tr/app/easyfinai-ai-finans-asistanı/id6756588815?l=tr',
-      playStore: 'https://play.google.com/store/apps/details?id=com.easyfinai.app&hl=tr',
-    },
-    website: 'https://easyfinai.com',
-  },
-  {
-    id: 'futbo',
-    title: 'Futbo',
-    highlight: 'Futbol kulübünün tüm operasyonu — antrenmandan scouting\'e, finanstan sağlığa.',
-    desc: 'Antrenman ve müsabaka planlama, oyuncu keşfi, atletik performans analizi, finans ve sağlık yönetimi. AI destekli analiz modülü ve futbolcu CV sistemi ile departmanlara özel çözümler.',
-    tag: 'Spor',
-    year: '2024',
-    screens: projectScreens('futbo'),
-    accent: 'blue',
-    stack: ['React Native', 'GraphQL', 'Maps'],
-    metrics: ['Scouting', 'AI analiz', 'Kulüp finansı'],
-    stores: {
-      appStore: 'https://apps.apple.com/tr/app/futbo-kulüp-yönetimi/id6504250422?l=tr',
-      playStore: 'https://play.google.com/store/apps/details?id=com.inch35.futbo&hl=tr',
-    },
-    website: 'https://futboapp.com',
-  },
-  {
-    id: 'vgen',
-    title: 'V-Gen',
-    highlight: 'Enerji ticaretinden santral yönetimine — anlık piyasa ve tesis operasyonları tek panelde.',
-    desc: 'Gün İçi Piyasası işlemleri, santral ve tüketim tesisi planlama, saatlik üretim-tüketim grafikleri ve KGÜP revizyonları. Pozisyon takibi ve piyasa raporlarıyla stratejik kararlar mobilde.',
-    tag: 'Enerji / İş',
-    year: '2024',
-    screens: projectScreens('vgen'),
-    accent: 'green',
-    stack: ['RN CLI', 'WebSocket', 'Charts'],
-    metrics: ['Gün içi piyasa', 'Santral yönetimi', 'Canlı raporlar'],
-    stores: {
-      appStore: 'https://apps.apple.com/tr/app/v-gen/id6737760470?l=tr',
-      playStore: 'https://play.google.com/store/apps/details?id=com.vtcenerji.vgen&hl=tr',
-    },
-  },
-  {
-    id: 'cartech',
-    title: 'Cartech AI',
-    highlight: 'Yapay zeka ile araç fotoğraflarına profesyonel arka plan — saniyeler içinde.',
-    desc: 'Aracı arka plandan otomatik ayırır; showroom, doğa veya şehir manzarası gibi ortamlarla gerçekçi görseller üretir. Satış ilanlarını ve sosyal medya paylaşımlarını daha çekici hale getirir.',
-    tag: 'Otomotiv / AI',
-    year: '2025',
-    screens: projectScreens('cartech'),
-    accent: 'amber',
-    stack: ['Vision AI', 'Camera', 'Upload'],
-    metrics: ['AI segmentasyon', 'Showroom', 'İlan görselleri'],
-    stores: {
-      appStore: 'https://apps.apple.com/tr/app/cartech-ai/id6743794904?l=tr',
-      playStore: 'https://play.google.com/store/apps/details?id=com.inch35.cartechai&hl=tr',
-    },
-  },
-]
-
 const SLOTS = ['left', 'center', 'right']
 
-const ProjectDevice = ({ image, title, size = 'md', slot = 'center' }) => (
+const ProjectDevice = ({ image, title, size = 'md', slot = 'center', screenLabel }) => (
   <div className={`project-device project-device--${size} project-device--${slot}`}>
     <div className="project-device__stage">
       <div className="project-device__iphone">
@@ -128,7 +38,7 @@ const ProjectDevice = ({ image, title, size = 'md', slot = 'center' }) => (
             className="project-device__screen"
             style={{ backgroundImage: `url(${image})` }}
             role="img"
-            aria-label={`${title} ekran ${slot}`}
+            aria-label={screenLabel}
           />
           <div className="project-device__glass" aria-hidden="true" />
         </div>
@@ -137,7 +47,7 @@ const ProjectDevice = ({ image, title, size = 'md', slot = 'center' }) => (
   </div>
 )
 
-const ProjectDevices = ({ project, size = 'md' }) => {
+const ProjectDevices = ({ project, size = 'md', screenLabelFn }) => {
   const screens = project.screens ?? [project.image, project.image, project.image]
 
   return (
@@ -150,88 +60,99 @@ const ProjectDevices = ({ project, size = 'md' }) => {
           title={project.title}
           size={size}
           slot={slot}
+          screenLabel={screenLabelFn(project.title, slot)}
         />
       ))}
     </div>
   )
 }
 
-const ProjectCard = ({ project }) => (
-  <article className={`project-card project-card--${project.accent}`}>
-    <div className="project-card__glow" aria-hidden="true" />
+const ProjectCard = ({ project, t }) => {
+  const metrics = t(`projects.items.${project.id}.metrics`, { returnObjects: true })
 
-    <div className="project-card__layout">
-      <div className="project-card__device-col">
-        <ProjectDevices project={project} size="lg" />
-      </div>
-      <div className="project-card__body">
-        <div className="project-card__top">
-          {project.featured ? (
-            <span className="project-card__badge">Öne çıkan</span>
-          ) : (
-            <span className="project-card__top-slot" aria-hidden="true" />
+  return (
+    <article className={`project-card project-card--${project.accent}`}>
+      <div className="project-card__glow" aria-hidden="true" />
+
+      <div className="project-card__layout">
+        <div className="project-card__device-col">
+          <ProjectDevices
+            project={project}
+            size="lg"
+            screenLabelFn={(title, slot) => t('projects.screen', { title, slot })}
+          />
+        </div>
+        <div className="project-card__body">
+          <div className="project-card__top">
+            {project.featured ? (
+              <span className="project-card__badge">{t('projects.featured')}</span>
+            ) : (
+              <span className="project-card__top-slot" aria-hidden="true" />
+            )}
+            <span className="project-card__year">{project.year}</span>
+          </div>
+          <span className="project-card__tag">{t(`projects.items.${project.id}.tag`)}</span>
+          <h3 className="project-card__title">{project.title}</h3>
+          <p className="project-card__highlight">{t(`projects.items.${project.id}.highlight`)}</p>
+          <p className="project-card__desc">{t(`projects.items.${project.id}.desc`)}</p>
+          {Array.isArray(metrics) && metrics.length > 0 && (
+            <ul className="project-card__metrics">
+              {metrics.map((m) => (
+                <li key={m}>{m}</li>
+              ))}
+            </ul>
           )}
-          <span className="project-card__year">{project.year}</span>
-        </div>
-        <span className="project-card__tag">{project.tag}</span>
-        <h3 className="project-card__title">{project.title}</h3>
-        <p className="project-card__highlight">{project.highlight}</p>
-        <p className="project-card__desc">{project.desc}</p>
-        {project.metrics?.length > 0 && (
-          <ul className="project-card__metrics">
-            {project.metrics.map((m) => (
-              <li key={m}>{m}</li>
+          <div className="project-card__stack">
+            {project.stack.map((tech) => (
+              <span key={tech} className="project-card__pill">{tech}</span>
             ))}
-          </ul>
-        )}
-        <div className="project-card__stack">
-          {project.stack.map((t) => (
-            <span key={t} className="project-card__pill">{t}</span>
-          ))}
-        </div>
-        <div className="project-card__stores">
-          <a
-            href={project.stores.appStore}
-            className="project-card__store"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${project.title} — App Store'da indir`}
-          >
-            <span className="material-symbols-outlined" aria-hidden="true">phone_iphone</span>
-            App Store
-          </a>
-          <a
-            href={project.stores.playStore}
-            className="project-card__store"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${project.title} — Google Play'de indir`}
-          >
-            <span className="material-symbols-outlined" aria-hidden="true">shop</span>
-            Google Play
-          </a>
-          {project.website && (
+          </div>
+          <div className="project-card__stores">
             <a
-              href={project.website}
+              href={project.stores.appStore}
               className="project-card__store"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${project.title} — web sitesini ziyaret et`}
+              aria-label={`${project.title} — ${t('projects.appStore')}`}
             >
-              <span className="material-symbols-outlined" aria-hidden="true">language</span>
-              Web
+              <span className="material-symbols-outlined" aria-hidden="true">phone_iphone</span>
+              {t('projects.stores.appStore')}
             </a>
-          )}
+            <a
+              href={project.stores.playStore}
+              className="project-card__store"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} — ${t('projects.googlePlay')}`}
+            >
+              <span className="material-symbols-outlined" aria-hidden="true">shop</span>
+              {t('projects.stores.googlePlay')}
+            </a>
+            {project.website && (
+              <a
+                href={project.website}
+                className="project-card__store"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${project.title} — ${t('projects.website')}`}
+              >
+                <span className="material-symbols-outlined" aria-hidden="true">language</span>
+                {t('projects.stores.web')}
+              </a>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  </article>
-)
+    </article>
+  )
+}
 
 const Projects = () => {
+  const { t, i18n } = useTranslation()
+  const projects = useMemo(() => getProjectsWithScreens(), [i18n.language])
   const slideCount = projects.length
   const cloneEndIndex = slideCount + 1
-  const sliderItems = useMemo(() => buildSliderItems(projects), [])
+  const sliderItems = useMemo(() => buildSliderItems(projects), [projects])
   const [trackIndex, setTrackIndex] = useState(1)
   const [instant, setInstant] = useState(false)
   const [paused, setPaused] = useState(false)
@@ -341,13 +262,11 @@ const Projects = () => {
       <div className="projects-showcase__bg" aria-hidden="true" />
 
       <Reveal className="projects-showcase__header">
-        <span className="projects-showcase__eyebrow">Portfolio</span>
+        <span className="projects-showcase__eyebrow">{t('projects.eyebrow')}</span>
         <h2 className="projects-showcase__title">
-          Seçilmiş <span className="projects-showcase__title-accent">projeler</span>
+          {t('projects.title')} <span className="projects-showcase__title-accent">{t('projects.titleAccent')}</span>
         </h2>
-        <p className="projects-showcase__subtitle">
-          Her ürün için üç ekran görüntüsü — mobil mockup içinde önizlenir.
-        </p>
+        <p className="projects-showcase__subtitle">{t('projects.subtitle')}</p>
       </Reveal>
 
       <Reveal className="projects-slider-wrap" delay={100}>
@@ -371,7 +290,7 @@ const Projects = () => {
                 type="button"
                 className="projects-slider__arrow"
                 onClick={goPrev}
-                aria-label="Önceki proje"
+                aria-label={t('projects.prev')}
               >
                 <span className="material-symbols-outlined">chevron_left</span>
               </button>
@@ -379,7 +298,7 @@ const Projects = () => {
                 type="button"
                 className="projects-slider__arrow"
                 onClick={goNext}
-                aria-label="Sonraki proje"
+                aria-label={t('projects.next')}
               >
                 <span className="material-symbols-outlined">chevron_right</span>
               </button>
@@ -391,7 +310,7 @@ const Projects = () => {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
             aria-roledescription="carousel"
-            aria-label="Seçilmiş projeler"
+            aria-label={t('projects.carousel')}
           >
             <div
               ref={trackRef}
@@ -404,14 +323,14 @@ const Projects = () => {
                   className={`projects-slider__slide ${index === trackIndex ? 'projects-slider__slide--active' : ''} ${Math.abs(index - trackIndex) === 1 ? 'projects-slider__slide--peek' : ''}`}
                   aria-hidden={index !== trackIndex}
                 >
-                  <ProjectCard project={item.project} />
+                  <ProjectCard project={item.project} t={t} />
                 </div>
               ))}
             </div>
           </div>
 
           <div className="projects-slider__footer">
-            <div className="projects-slider__dots" role="tablist" aria-label="Proje seç">
+            <div className="projects-slider__dots" role="tablist" aria-label={t('projects.selectProject')}>
               {projects.map((project, index) => (
                 <button
                   key={project.id}
@@ -419,7 +338,7 @@ const Projects = () => {
                   role="tab"
                   className={`projects-slider__dot ${index === realIndex ? 'projects-slider__dot--active' : ''}`}
                   aria-selected={index === realIndex}
-                  aria-label={`${project.title} — slayt ${index + 1}`}
+                  aria-label={t('projects.slide', { title: project.title, index: index + 1 })}
                   onClick={() => goTo(index)}
                 />
               ))}

@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher'
 import './Navbar.css'
 
 const NAV_ITEMS = [
-  { href: '#about', label: 'Hakkımda', icon: 'person' },
-  { href: '#skills', label: 'Yetenekler', icon: 'code_blocks' },
-  { href: '#approach', label: 'Yaklaşımım', icon: 'auto_awesome' },
-  { href: '#projects', label: 'Projeler', icon: 'folder_open' },
+  { href: '#about', key: 'about', icon: 'person' },
+  { href: '#skills', key: 'skills', icon: 'code_blocks' },
+  { href: '#approach', key: 'approach', icon: 'auto_awesome' },
+  { href: '#projects', key: 'projects', icon: 'folder_open' },
 ]
 
 const Navbar = () => {
+  const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -44,17 +47,18 @@ const Navbar = () => {
           {NAV_ITEMS.map((item) => (
             <a key={item.href} href={item.href} className="nav-link">
               <span className="material-symbols-outlined nav-link__icon">{item.icon}</span>
-              {item.label}
+              {t(`nav.${item.key}`)}
             </a>
           ))}
         </nav>
 
         <div className="nav-actions">
+          <LanguageSwitcher />
           <a href="#contact" className="btn-hire-ref desktop-only">
             <span className="material-symbols-outlined">chat</span>
-            Konuşalım
+            {t('nav.contact')}
           </a>
-          <button type="button" className="mobile-menu-btn" onClick={toggleMenu} aria-label="Menü">
+          <button type="button" className="mobile-menu-btn" onClick={toggleMenu} aria-label={t('nav.menu')}>
             <span className="material-symbols-outlined">
               {isMenuOpen ? 'close' : 'menu'}
             </span>
@@ -67,12 +71,13 @@ const Navbar = () => {
           {NAV_ITEMS.map((item) => (
             <a key={item.href} href={item.href} className="nav-link" onClick={closeMenu}>
               <span className="material-symbols-outlined nav-link__icon">{item.icon}</span>
-              {item.label}
+              {t(`nav.${item.key}`)}
             </a>
           ))}
+          <LanguageSwitcher />
           <a href="#contact" className="btn-hire-ref" onClick={closeMenu}>
             <span className="material-symbols-outlined">chat</span>
-            Konuşalım
+            {t('nav.contact')}
           </a>
         </nav>
       </div>

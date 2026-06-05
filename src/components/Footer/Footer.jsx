@@ -1,20 +1,21 @@
+import { useTranslation } from 'react-i18next'
 import Reveal from '../Reveal/Reveal'
 import './Footer.css'
 
 const Footer = () => {
+  const { t } = useTranslation()
+
   return (
     <div className="footer-wrapper">
       <section className="contact-section container" id="contact">
         <div className="contact-section__bg" aria-hidden="true" />
 
         <Reveal className="contact-section__header">
-          <span className="contact-section__eyebrow">İletişim</span>
+          <span className="contact-section__eyebrow">{t('footer.eyebrow')}</span>
           <h2 className="contact-section__title">
-            Birlikte <span className="contact-section__title-accent">konuşalım</span>
+            {t('footer.title')} <span className="contact-section__title-accent">{t('footer.titleAccent')}</span>
           </h2>
-          <p className="contact-section__subtitle">
-            İzmir merkezli, remote-friendly. Mobil geliştirme veya mimari danışmanlık için mesaj bırakın.
-          </p>
+          <p className="contact-section__subtitle">{t('footer.subtitle')}</p>
         </Reveal>
 
         <Reveal className="contact-card" delay={80}>
@@ -22,18 +23,18 @@ const Footer = () => {
 
           <div className="contact-card__layout">
             <aside className="contact-card__aside">
-              <p className="contact-card__aside-label">Hızlı erişim</p>
+              <p className="contact-card__aside-label">{t('footer.quickAccess')}</p>
               <a href="mailto:diyaryelbaka@gmail.com" className="contact-chip">
                 <span className="material-symbols-outlined" aria-hidden="true">mail</span>
                 diyaryelbaka@gmail.com
               </a>
               <span className="contact-chip contact-chip--muted">
                 <span className="material-symbols-outlined" aria-hidden="true">location_on</span>
-                İzmir · Remote-friendly
+                {t('footer.location')}
               </span>
               <span className="contact-chip contact-chip--muted">
                 <span className="material-symbols-outlined" aria-hidden="true">schedule</span>
-                Genelde 24 saat içinde dönüş
+                {t('footer.response')}
               </span>
             </aside>
 
@@ -47,14 +48,14 @@ const Footer = () => {
                 <div className="contact-field">
                   <label htmlFor="name" className="contact-field__label">
                     <span className="material-symbols-outlined" aria-hidden="true">person</span>
-                    Ad
+                    {t('footer.form.name')}
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     className="contact-field__input"
-                    placeholder="Adınız"
+                    placeholder={t('footer.form.namePlaceholder')}
                     required
                     autoComplete="name"
                   />
@@ -62,14 +63,14 @@ const Footer = () => {
                 <div className="contact-field">
                   <label htmlFor="email" className="contact-field__label">
                     <span className="material-symbols-outlined" aria-hidden="true">alternate_email</span>
-                    E-posta
+                    {t('footer.form.email')}
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     className="contact-field__input"
-                    placeholder="ornek@mail.com"
+                    placeholder={t('footer.form.emailPlaceholder')}
                     required
                     autoComplete="email"
                   />
@@ -78,19 +79,19 @@ const Footer = () => {
               <div className="contact-field">
                 <label htmlFor="message" className="contact-field__label">
                   <span className="material-symbols-outlined" aria-hidden="true">chat</span>
-                  Mesaj
+                  {t('footer.form.message')}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   className="contact-field__input contact-field__input--area"
                   rows="5"
-                  placeholder="Projenizden kısaca bahsedin..."
+                  placeholder={t('footer.form.messagePlaceholder')}
                   required
                 />
               </div>
               <button type="submit" className="contact-form__submit">
-                Mesaj gönder
+                {t('footer.form.submit')}
                 <span className="material-symbols-outlined" aria-hidden="true">send</span>
               </button>
             </form>
@@ -103,12 +104,12 @@ const Footer = () => {
           <Reveal className="footer-bar" delay={100}>
             <div className="footer-bar__left">
               <span className="footer-bar__brand">Diyar Yelbaka</span>
-              <span className="footer-bar__meta">© 2026 · React Native Developer</span>
+              <span className="footer-bar__meta">{t('footer.copyright')}</span>
             </div>
             <div className="footer-bar__links">
-              <a href="mailto:diyaryelbaka@gmail.com">E-posta</a>
-              <a href="#" aria-label="LinkedIn profili">LinkedIn</a>
-              <a href="#" aria-label="GitHub profili">GitHub</a>
+              <a href="mailto:diyaryelbaka@gmail.com">{t('footer.email')}</a>
+              <a href="#" aria-label={t('footer.linkedin')}>LinkedIn</a>
+              <a href="#" aria-label={t('footer.github')}>GitHub</a>
             </div>
           </Reveal>
         </div>

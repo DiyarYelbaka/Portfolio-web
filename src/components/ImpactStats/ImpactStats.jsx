@@ -1,22 +1,21 @@
+import { useTranslation } from 'react-i18next'
 import Reveal from '../Reveal/Reveal'
 import './ImpactStats.css'
 
-const stats = [
-  { value: '3+', label: 'Yıl', sub: 'Enterprise mobil geliştirme' },
-  { value: '10+', label: 'Ürün', sub: 'Canlıya alınmış uygulama' },
-  { value: '∞', label: 'Ölçek', sub: 'Modüler, sürdürülebilir mimari' },
-  { value: '100%', label: 'Odak', sub: 'TypeScript & sürdürülebilir kod' },
-]
+const STAT_KEYS = ['years', 'products', 'scale', 'focus']
+const STAT_VALUES = ['3+', '10+', '∞', '100%']
 
 const ImpactStats = () => {
+  const { t } = useTranslation()
+
   return (
-    <section className="impact-stats container" aria-label="Özet metrikler">
+    <section className="impact-stats container" aria-label={t('stats.ariaLabel')}>
       <div className="impact-stats__grid">
-        {stats.map((stat, i) => (
-          <Reveal key={stat.label} className="impact-stat" delay={i * 80}>
-            <span className="impact-stat__value">{stat.value}</span>
-            <span className="impact-stat__label">{stat.label}</span>
-            <span className="impact-stat__sub">{stat.sub}</span>
+        {STAT_KEYS.map((key, i) => (
+          <Reveal key={key} className="impact-stat" delay={i * 80}>
+            <span className="impact-stat__value">{STAT_VALUES[i]}</span>
+            <span className="impact-stat__label">{t(`stats.${key}.label`)}</span>
+            <span className="impact-stat__sub">{t(`stats.${key}.sub`)}</span>
           </Reveal>
         ))}
       </div>

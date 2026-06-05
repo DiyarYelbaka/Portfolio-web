@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "approach": "Approach",
+    "projects": "Projects",
+    "contact": "Let's talk",
+    "menu": "Menu"
+  },
+  "hero": {
+    "bio": "I don't just build mobile apps — I own the full journey from idea to production. I combine user experience, performance, and sustainable architecture to ship high-quality digital products.",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "stats": {
+    "ariaLabel": "Summary metrics",
+    "years": { "label": "Years", "sub": "Enterprise mobile development" },
+    "products": { "label": "Products", "sub": "Apps shipped to production" },
+    "scale": { "label": "Scale", "sub": "Modular, maintainable architecture" },
+    "focus": { "label": "Focus", "sub": "TypeScript & sustainable code" }
+  },
+  "tech": {
+    "title": "Tech & Skills",
+    "subtitle": "Development focused on performance, scalability, and user experience.",
+    "main": {
+      "reactNative": { "desc": "CLI & Expo expert" },
+      "typescript": { "desc": "Type-safe excellence" },
+      "state": { "desc": "Zustand, Redux, Recoil" },
+      "api": { "desc": "REST & GraphQL" }
+    },
+    "detail": {
+      "cleanArch": { "desc": "Building sustainable, scalable, and maintainable enterprise codebases." },
+      "performance": { "desc": "Expert in render optimization, lifecycle management, and memory efficiency." },
+      "native": { "desc": "Seamlessly integrating payment SDKs, camera, push notifications, and platform APIs with React Native." },
+      "deploy": { "desc": "End-to-end ownership from development to App Store and Play Store release." }
+    }
+  },
+  "whyHire": {
+    "eyebrow": "How I work",
+    "title": "What I offer",
+    "subtitle": "Product-driven development — a consistent, sustainable process from architecture to store release.",
+    "pillars": {
+      "ideaToStore": {
+        "title": "Idea to store",
+        "desc": "Full ownership from architecture and development to testing and App Store / Play Store submission."
+      },
+      "codeQuality": {
+        "title": "Code quality first",
+        "desc": "Clean Architecture, TypeScript, and scalable state — a codebase that grows without accumulating tech debt."
+      },
+      "performance": {
+        "title": "Performance-driven",
+        "desc": "Render optimization, memory management, and smooth interactions — apps that prioritize user experience."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Portfolio",
+    "title": "Selected",
+    "titleAccent": "projects",
+    "subtitle": "Three screenshots per product — previewed inside mobile mockups.",
+    "featured": "Featured",
+    "prev": "Previous project",
+    "next": "Next project",
+    "carousel": "Selected projects",
+    "selectProject": "Select project",
+    "slide": "{{title}} — slide {{index}}",
+    "screen": "{{title}} screen {{slot}}",
+    "appStore": "Download on App Store",
+    "googlePlay": "Get it on Google Play",
+    "website": "visit website",
+    "stores": {
+      "appStore": "App Store",
+      "googlePlay": "Google Play",
+      "web": "Web"
+    },
+    "items": {
+      "plan4m": {
+        "highlight": "All-in-one platform connecting studios, trainers, and members in one ecosystem.",
+        "desc": "Membership tracking, session scheduling, payments, and reporting — separate flows for studio owners, personal trainers, and members. Smart renewal reminders and revenue reports in one app.",
+        "tag": "Health & Fitness",
+        "metrics": ["300+ studios", "Sessions & Membership", "Payment tracking"]
+      },
+      "easyfinai": {
+        "highlight": "Voice-powered expense logging — AI-driven income, expense, and budget management.",
+        "desc": "Say \"600 TL groceries\" and it's logged automatically. Smart categories, chart reports, and a real-time dashboard. Secure, encrypted finance tracking with no bank connection required.",
+        "tag": "Finance / AI",
+        "metrics": ["Voice input", "AI categories", "Reporting"]
+      },
+      "futbo": {
+        "highlight": "Full football club operations — from training and scouting to finance and health.",
+        "desc": "Training and match planning, player scouting, athletic performance analysis, finance, and health management. AI-powered analytics and player CV system with tailored solutions for every department.",
+        "tag": "Sports",
+        "metrics": ["Scouting", "AI analytics", "Club finance"]
+      },
+      "vgen": {
+        "highlight": "From energy trading to plant management — real-time market and facility operations in one panel.",
+        "desc": "Day-ahead market transactions, plant and consumption facility planning, hourly production-consumption charts, and KGÜP revisions. Strategic decisions on mobile with position tracking and market reports.",
+        "tag": "Energy / Business",
+        "metrics": ["Day-ahead market", "Plant management", "Live reports"]
+      },
+      "cartech": {
+        "highlight": "Professional AI backgrounds for car photos — in seconds.",
+        "desc": "Automatically removes the background and generates realistic visuals with showroom, nature, or city environments. Makes sales listings and social media posts more compelling.",
+        "tag": "Automotive / AI",
+        "metrics": ["AI segmentation", "Showroom", "Listing visuals"]
+      }
+    }
+  },
+  "footer": {
+    "eyebrow": "Contact",
+    "title": "Let's",
+    "titleAccent": "talk",
+    "subtitle": "Based in Izmir, remote-friendly. Leave a message for mobile development or architecture consulting.",
+    "quickAccess": "Quick access",
+    "location": "Izmir · Remote-friendly",
+    "response": "Usually reply within 24 hours",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me briefly about your project...",
+      "submit": "Send message"
+    },
+    "email": "Email",
+    "linkedin": "LinkedIn profile",
+    "github": "GitHub profile",
+    "copyright": "© 2026 · React Native Developer"
+  }
+}
