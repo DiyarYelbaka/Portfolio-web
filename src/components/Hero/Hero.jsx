@@ -44,7 +44,7 @@ const Hero = () => {
 
       <Reveal delay={140}>
         <h1 className="hero-title-ref">
-          <span className="hero-title-gradient">React Nativee</span>
+          <span className="hero-title-gradient">React Native</span>
           <span className="hero-title-line">Developer</span>
         </h1>
       </Reveal>
