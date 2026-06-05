@@ -26,8 +26,8 @@ jobs:
           cache: yarn
 
       - run: yarn install --frozen-lockfile
-      # github.io/Portfolio-web/ için alt yol — domain hazır olunca: VITE_BASE=/ yarn build
-      - run: VITE_BASE=/Portfolio-web/ yarn build
+      # Özel domain (diyaryelbaka.com) — kök yol
+      - run: VITE_BASE=/ yarn build
 
       - uses: actions/upload-pages-artifact@v3
         with:
