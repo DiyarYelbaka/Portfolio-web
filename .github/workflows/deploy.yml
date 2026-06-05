@@ -26,8 +26,7 @@ jobs:
           cache: yarn
 
       - run: yarn install --frozen-lockfile
-      # Özel domain (diyaryelbaka.com) — kök yol
-      - run: VITE_BASE=/ yarn build
+      - run: yarn build
 
       - uses: actions/upload-pages-artifact@v3
         with:
