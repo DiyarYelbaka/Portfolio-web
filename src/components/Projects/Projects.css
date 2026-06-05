@@ -752,32 +752,38 @@
   border-color: rgba(245, 158, 11, 0.2);
 }
 
-.project-card__cta {
+.project-card__stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: auto;
+}
+
+.project-card__store {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: auto;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: #f8fafc;
-  padding: 0.6rem 1.1rem;
+  padding: 0.55rem 1rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition:
     background 0.25s ease,
     border-color 0.25s ease,
-    gap 0.25s ease;
+    transform 0.25s ease;
 }
 
-.project-card__cta:hover {
+.project-card__store:hover {
   background: rgba(43, 108, 238, 0.2);
   border-color: rgba(43, 108, 238, 0.4);
-  gap: 0.6rem;
+  transform: translateY(-1px);
 }
 
-.project-card__cta .material-symbols-outlined {
-  font-size: 18px !important;
+.project-card__store .material-symbols-outlined {
+  font-size: 17px !important;
 }
 
 .projects-slider__slide {

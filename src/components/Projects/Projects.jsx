@@ -35,6 +35,11 @@ const projects = [
     stack: ['React Native', 'TypeScript', 'Redux'],
     metrics: ['Multi-tenant', 'Ödeme', 'Raporlama'],
     featured: true,
+    stores: {
+      appStore: 'https://apps.apple.com/tr/app/plan4m-salon-pt-yönetimi/id6471654614?l=tr',
+      playStore: 'https://play.google.com/store/apps/details?id=com.inch35.plan4m&hl=tr',
+    },
+    website: 'https://plan4m.com',
   },
   {
     id: 'easyfinai',
@@ -47,6 +52,11 @@ const projects = [
     accent: 'purple',
     stack: ['Expo', 'OpenAI', 'Zustand'],
     metrics: ['Voice UI', 'AI', 'Payments'],
+    stores: {
+      appStore: 'https://apps.apple.com/tr/app/easyfinai-ai-finans-asistanı/id6756588815?l=tr',
+      playStore: 'https://play.google.com/store/apps/details?id=com.easyfinai.app&hl=tr',
+    },
+    website: 'https://easyfinai.com',
   },
   {
     id: 'futbo',
@@ -59,6 +69,11 @@ const projects = [
     accent: 'blue',
     stack: ['React Native', 'GraphQL', 'Maps'],
     metrics: ['Modüler', 'Takvim', 'Finans'],
+    stores: {
+      appStore: 'https://apps.apple.com/tr/app/futbo-kulüp-yönetimi/id6504250422?l=tr',
+      playStore: 'https://play.google.com/store/apps/details?id=com.inch35.futbo&hl=tr',
+    },
+    website: 'https://futboapp.com',
   },
   {
     id: 'vgen',
@@ -71,6 +86,10 @@ const projects = [
     accent: 'green',
     stack: ['RN CLI', 'WebSocket', 'Charts'],
     metrics: ['Real-time', 'Dashboard', 'Scale'],
+    stores: {
+      appStore: 'https://apps.apple.com/tr/app/v-gen/id6737760470?l=tr',
+      playStore: 'https://play.google.com/store/apps/details?id=com.vtcenerji.vgen&hl=tr',
+    },
   },
   {
     id: 'cartech',
@@ -83,6 +102,10 @@ const projects = [
     accent: 'amber',
     stack: ['Vision AI', 'Camera', 'Upload'],
     metrics: ['Segmentation', 'ML', 'Listing'],
+    stores: {
+      appStore: 'https://apps.apple.com/tr/app/cartech-ai/id6743794904?l=tr',
+      playStore: 'https://play.google.com/store/apps/details?id=com.inch35.cartechai&hl=tr',
+    },
   },
 ]
 
@@ -166,10 +189,40 @@ const ProjectCard = ({ project }) => (
             <span key={t} className="project-card__pill">{t}</span>
           ))}
         </div>
-        <a href="#" className="project-card__cta">
-          Detayları gör
-          <span className="material-symbols-outlined">arrow_outward</span>
-        </a>
+        <div className="project-card__stores">
+          <a
+            href={project.stores.appStore}
+            className="project-card__store"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${project.title} — App Store'da indir`}
+          >
+            <span className="material-symbols-outlined" aria-hidden="true">phone_iphone</span>
+            App Store
+          </a>
+          <a
+            href={project.stores.playStore}
+            className="project-card__store"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${project.title} — Google Play'de indir`}
+          >
+            <span className="material-symbols-outlined" aria-hidden="true">shop</span>
+            Google Play
+          </a>
+          {project.website && (
+            <a
+              href={project.website}
+              className="project-card__store"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} — web sitesini ziyaret et`}
+            >
+              <span className="material-symbols-outlined" aria-hidden="true">language</span>
+              Web
+            </a>
+          )}
+        </div>
       </div>
     </div>
   </article>
