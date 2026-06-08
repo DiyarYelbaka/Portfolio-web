@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="container nav-container">
         <a href="#" className="logo-group">
           <span className="logo-icon-wrap">
-            <span className="material-symbols-outlined logo-icon">rocket_launch</span>
+            <span className="material-symbols-outlined logo-icon" aria-hidden="true">rocket_launch</span>
           </span>
           <h2 className="logo-text">Diyar Yelbaka</h2>
         </a>
